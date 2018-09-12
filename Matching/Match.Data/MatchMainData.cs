@@ -6,12 +6,12 @@ namespace Match.Data
 {
     public class MatchMainData: DbContext
     {
-        public DbSet<Person> Samurais { get; set; }
+        public DbSet<Person> Persons { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-              "Server = (localdb)\\mssqllocaldb; Database = EfSamurai;");
+              "Server = (localdb)\\mssqllocaldb; Database = MatchingDataBase;");
         }
     }
 }

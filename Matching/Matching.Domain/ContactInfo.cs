@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Matching.Domain
 {
-    class ContactInfo
+    public class ContactInfo
     {
+        public int Id { get; set; }
+        public string Location { get; set; }
+        public string  Adress { get; set; }
+        public string Email { get; set; }
+
     }
 }
