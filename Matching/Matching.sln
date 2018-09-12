@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matching", "Matching\Matching.csproj", "{5A5DB898-D0F0-469A-99C4-6ED8DB24AB77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matching", "Matching\Matching.csproj", "{5A5DB898-D0F0-469A-99C4-6ED8DB24AB77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Match.Data", "Match.Data\Match.Data.csproj", "{1A66C361-D4C6-4106-AEAE-9B093268E0F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matching.Domain", "Matching.Domain\Matching.Domain.csproj", "{A427C003-E534-45A8-B165-B1C0675D68ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{5A5DB898-D0F0-469A-99C4-6ED8DB24AB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A5DB898-D0F0-469A-99C4-6ED8DB24AB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A5DB898-D0F0-469A-99C4-6ED8DB24AB77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A66C361-D4C6-4106-AEAE-9B093268E0F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A66C361-D4C6-4106-AEAE-9B093268E0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A66C361-D4C6-4106-AEAE-9B093268E0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A66C361-D4C6-4106-AEAE-9B093268E0F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A427C003-E534-45A8-B165-B1C0675D68ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A427C003-E534-45A8-B165-B1C0675D68ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A427C003-E534-45A8-B165-B1C0675D68ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A427C003-E534-45A8-B165-B1C0675D68ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
