@@ -19,7 +19,5 @@ namespace Matching.Domain
         public List<Occupation> Occupations { get; set; }
         public List<Complexion> Complexions { get; set; }
         public List<Family> Family { get; set; }
-
-
     }
 }

@@ -8,7 +8,7 @@ namespace Matching.Domain
 {
     public enum PeronalityCharacter
     {
-        Ambitious, Active
+        Ambitious, Active, Adventurous, BigThinking, Calm, Conservative, Emotional, Charming, Cooperative, Creative, Disciplined, Reserved, Enthusiastic, Flexible, Friendly, Helpful, Lyrical, Logical, Observant, Perfectionist, Punctual, Rational, Romantic, Sentimental, Spontaneous,Sporting, Trusting, Winning
     }
     public class Personality
     {
