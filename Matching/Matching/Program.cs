@@ -8,7 +8,9 @@ namespace Matching
     {
         static void Main(string[] args)
         {
-            DataInput.AddPersonWithData(); 
+            //DataInput.ClearDatabase();
+            DataInput.AddPersonWithData();
+            
         }
     }
 }

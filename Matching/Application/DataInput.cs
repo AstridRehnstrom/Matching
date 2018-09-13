@@ -28,47 +28,70 @@ namespace Application
                     new Gender { GenderType = GenderType.Male }
 
                 },
-                Educations= new List<Education>
+                Educations = new List<Education>
                 {
                     new Education{ EducationType=EducationType.School}
                 },
-                Occupations=new List<Occupation>
+                Occupations = new List<Occupation>
                 {
                    new Occupation{ occupation=OccupationType.Student}
                 },
-                Complexions=new List<Complexion>
+                Complexions = new List<Complexion>
                 {
                     new Complexion{ BodyType=BodyType.Average, HairColor=HairColor.Black, SkinColor=SkinColor.Pale}
                 },
-                Family= new List<Family>
+                Family = new List<Family>
                 {
                     new Family{  HaveAnimal=true, HaveChildren=false}
                 },
-               
+                InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.FoodNDrink}
+                    }
+
+                },
+                PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Active }
+
+                         }
+                }
+
 
             };
-            var interest = new Interests
-            {
-                PersonInterest = PersonInterest.FoodNDrink
-                
-            };
-            var personality = new Personality
-            {
-                PeronalityTraits = PeronalityCharacter.Active
-            };
-            
+
+
 
             using (var context = new MatchMainData())
 
             {
-             
+
                 context.Persons.Add(person);
-                context.Personality.Add(personality);
-                context.Interests.Add(interest);
+
 
                 context.SaveChanges();
             }
         }
+        /*
+        public static  void ClearDatabase()
+        {
+            // För att ta bort ett objekt måste du först göra en query
+            using (var context = new MatchMainData())
+            {
+                context.Remove(context.Persons);
+                context.Remove(context.Personality);
+                context.Remove(context.Interests);
+                //ReseedAllTables();
+
+                context.SaveChanges();
+            }
+
+
+           
+        }
+        */
 
     }
 }
