@@ -4,14 +4,16 @@ using Match.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Match.Data.Database.Migrations
 {
     [DbContext(typeof(MatchMainData))]
-    partial class MatchMainDataModelSnapshot : ModelSnapshot
+    [Migration("20180913113028_pipobododopido")]
+    partial class pipobododopido
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
