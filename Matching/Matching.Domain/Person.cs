@@ -13,7 +13,7 @@ namespace Matching.Domain
         public ContactInfo ContactInfo { get; set; }
         public GenderType Gender { get; set; }
 
-        //public List<GenderType> RelationTyes { get; set; }
+        public List<Gender> IntrestedInGenders { get; set; }
 
 
     }

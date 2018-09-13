@@ -10,6 +10,8 @@ namespace Matching.Domain
         public string Location { get; set; }
         public string  Adress { get; set; }
         public string Email { get; set; }
+        public Person Person { get; set; }
+        public int PersonId { get; set; }
 
     }
 }

@@ -10,4 +10,9 @@ namespace Matching.Domain
     {
         Male, Famale, Other
     }
+    public class Gender
+    {
+        public int Id { get; set; }
+        public GenderType GenderType { get; set; }
+    }
 }

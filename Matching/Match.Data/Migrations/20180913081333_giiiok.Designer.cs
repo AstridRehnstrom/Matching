@@ -4,14 +4,16 @@ using Match.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Match.Data.Database.Migrations
 {
     [DbContext(typeof(MatchMainData))]
-    partial class MatchMainDataModelSnapshot : ModelSnapshot
+    [Migration("20180913081333_giiiok")]
+    partial class giiiok
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,31 +33,9 @@ namespace Match.Data.Database.Migrations
 
                     b.Property<string>("Location");
 
-                    b.Property<int>("PersonId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("PersonId")
-                        .IsUnique();
 
                     b.ToTable("ContactInfo");
-                });
-
-            modelBuilder.Entity("Matching.Domain.Gender", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("GenderType");
-
-                    b.Property<int?>("PersonId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("Gender");
                 });
 
             modelBuilder.Entity("Matching.Domain.Person", b =>
@@ -65,6 +45,8 @@ namespace Match.Data.Database.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Age");
+
+                    b.Property<int?>("ContactInfoId");
 
                     b.Property<string>("FirstName");
 
@@ -76,21 +58,37 @@ namespace Match.Data.Database.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ContactInfoId");
+
                     b.ToTable("Persons");
                 });
 
-            modelBuilder.Entity("Matching.Domain.ContactInfo", b =>
+            modelBuilder.Entity("Matching.Domain.RelationType", b =>
                 {
-                    b.HasOne("Matching.Domain.Person", "Person")
-                        .WithOne("ContactInfo")
-                        .HasForeignKey("Matching.Domain.ContactInfo", "PersonId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("PersonId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("RelationType");
                 });
 
-            modelBuilder.Entity("Matching.Domain.Gender", b =>
+            modelBuilder.Entity("Matching.Domain.Person", b =>
                 {
-                    b.HasOne("Matching.Domain.Person")
-                        .WithMany("IntrestedInGenders")
+                    b.HasOne("Matching.Domain.ContactInfo", "ContactInfo")
+                        .WithMany()
+                        .HasForeignKey("ContactInfoId");
+                });
+
+            modelBuilder.Entity("Matching.Domain.RelationType", b =>
+                {
+                    b.HasOne("Matching.Domain.Person", "Person")
+                        .WithMany("RelationTypes")
                         .HasForeignKey("PersonId");
                 });
 #pragma warning restore 612, 618
