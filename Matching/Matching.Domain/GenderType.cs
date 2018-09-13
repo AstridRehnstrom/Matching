@@ -8,7 +8,7 @@ namespace Matching.Domain
 {
     public enum GenderType
     {
-        Male, Famale, Other
+        Male, Female, Other
     }
     public class Gender
     {

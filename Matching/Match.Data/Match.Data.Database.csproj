@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Matching.Domain\Matching.Domain.csproj" />
-    <ProjectReference Include="..\Matching\MatchingMainProgramme.csproj" />
   </ItemGroup>
 
 </Project>
