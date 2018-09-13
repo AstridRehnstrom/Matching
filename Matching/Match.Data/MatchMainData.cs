@@ -8,6 +8,7 @@ namespace Match.Data
     {
         public DbSet<Person> Persons { get; set; }
         public DbSet<Personality> Personality { get; set; }
+        public DbSet<Interests> Interests { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

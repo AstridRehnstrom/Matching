@@ -47,11 +47,25 @@ namespace Application
                
 
             };
+            var interest = new Interests
+            {
+                PersonInterest = PersonInterest.FoodNDrink
+                
+            };
+            var personality = new Personality
+            {
+                PeronalityTraits = PeronalityCharacter.Active
+            };
+            
 
             using (var context = new MatchMainData())
 
             {
+             
                 context.Persons.Add(person);
+                context.Personality.Add(personality);
+                context.Interests.Add(interest);
+
                 context.SaveChanges();
             }
         }
