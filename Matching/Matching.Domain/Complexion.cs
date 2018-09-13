@@ -9,9 +9,10 @@ namespace Matching.Domain
     public class Complexion
     {
         public int Id { get; set; }
-        public HairColor HairColor{ get; set; }
-        public SkinColor SkinColor{ get; set; }
-        public BodyType BodyType{ get; set; }
-       
+        public HairColor HairColor { get; set; }
+        public SkinColor SkinColor { get; set; }
+        public BodyType BodyType { get; set; }
+        public Person Person { get; set; }
+
     }
 }

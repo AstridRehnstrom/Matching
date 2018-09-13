@@ -11,5 +11,6 @@ namespace Matching.Domain
         public int Id { get; set; }
         public bool HaveChildren { get; set; }
         public bool HaveAnimal { get; set; }
+        public Person Person { get; set; }
     }
 }

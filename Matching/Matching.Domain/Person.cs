@@ -17,6 +17,8 @@ namespace Matching.Domain
         public List<Interests> Intrestes { get; set; }
         public List<Education> Educations { get; set; }
         public List<Occupation> Occupations { get; set; }
+        public List<Complexion> Complexions { get; set; }
+        public List<Family> Family { get; set; }
 
 
     }
