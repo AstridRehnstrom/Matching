@@ -62,13 +62,27 @@ namespace Application
 
             };
 
+            var person1 = new Person { };
+            var person2 = new Person { };
+            var person3 = new Person { };
+            var person4 = new Person { };
+            var person5 = new Person { };
+            var person6 = new Person { };
+            var person7 = new Person { };
+            var person8 = new Person { };
+            var person9 = new Person { };
+           var person10= new Person { };
+           var person11 =new Person { };
+           var person12 = new Person { };
+
+
 
 
             using (var context = new MatchMainData())
 
             {
 
-                context.Persons.Add(person);
+                context.Persons.AddRange(person,person1,person2,person3,person4,person5,person6,person7,person8,person9,person10,person11,person12);
 
 
                 context.SaveChanges();
