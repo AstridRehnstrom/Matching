@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Matching.Domain
 {
@@ -10,7 +11,9 @@ namespace Matching.Domain
         public string  LastName { get; set; }
         public int Age { get; set; }
         public ContactInfo ContactInfo { get; set; }
-        public Gender Gender { get; set; }
+        public GenderType Gender { get; set; }
+
+        //public List<GenderType> RelationTyes { get; set; }
 
 
     }

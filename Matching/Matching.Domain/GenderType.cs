@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public class Gender
+    public enum GenderType
     {
-        
+        Male, Famale, Other
     }
 }
