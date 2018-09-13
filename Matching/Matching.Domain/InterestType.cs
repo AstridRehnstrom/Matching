@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public class InterestType
+    public enum InterestType
     {
-        
+       CouchPotato, OntheFly, Adventurous,
     }
 }
