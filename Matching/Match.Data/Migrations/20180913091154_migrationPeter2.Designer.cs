@@ -4,14 +4,16 @@ using Match.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Match.Data.Database.Migrations
 {
     [DbContext(typeof(MatchMainData))]
-    partial class MatchMainDataModelSnapshot : ModelSnapshot
+    [Migration("20180913091154_migrationPeter2")]
+    partial class migrationPeter2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -137,28 +139,13 @@ namespace Match.Data.Database.Migrations
 
                     b.Property<string>("Travel");
 
-                    b.Property<int?>("TypeId");
+                    b.Property<int>("Type");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PersonId");
 
-                    b.HasIndex("TypeId");
-
                     b.ToTable("Interests");
-                });
-
-            modelBuilder.Entity("Matching.Domain.InterestType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("PersonInterest");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("InterestType");
                 });
 
             modelBuilder.Entity("Matching.Domain.Occupation", b =>
@@ -197,32 +184,6 @@ namespace Match.Data.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Persons");
-                });
-
-            modelBuilder.Entity("Matching.Domain.Personality", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("PeronalityTraits");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Personality");
-                });
-
-            modelBuilder.Entity("Matching.Domain.PersonPersonality", b =>
-                {
-                    b.Property<int>("PersonId");
-
-                    b.Property<int>("PersonalityId");
-
-                    b.HasKey("PersonId", "PersonalityId");
-
-                    b.HasIndex("PersonalityId");
-
-                    b.ToTable("PersonPersonality");
                 });
 
             modelBuilder.Entity("Matching.Domain.Complexion", b =>
@@ -266,10 +227,6 @@ namespace Match.Data.Database.Migrations
                     b.HasOne("Matching.Domain.Person", "Person")
                         .WithMany("Intrestes")
                         .HasForeignKey("PersonId");
-
-                    b.HasOne("Matching.Domain.InterestType", "Type")
-                        .WithMany("Interests")
-                        .HasForeignKey("TypeId");
                 });
 
             modelBuilder.Entity("Matching.Domain.Occupation", b =>
@@ -277,19 +234,6 @@ namespace Match.Data.Database.Migrations
                     b.HasOne("Matching.Domain.Person", "Person")
                         .WithMany("Occupations")
                         .HasForeignKey("PersonId");
-                });
-
-            modelBuilder.Entity("Matching.Domain.PersonPersonality", b =>
-                {
-                    b.HasOne("Matching.Domain.Person", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Matching.Domain.Personality", "Personality")
-                        .WithMany("PersonPersonalities")
-                        .HasForeignKey("PersonalityId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

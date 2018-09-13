@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public enum InterestType
+    public enum PersonInterest
     {
-       CouchPotato, OntheFly, Adventurous,
+        CouchPotato, OntheFly, Adventurous,
+    }
+
+    public class InterestType
+    {
+        public int Id { get; set; }
+
+        public List<Interests> Interests { get; set; }
+        public PersonInterest PersonInterest { get; set; }
+
     }
 }
