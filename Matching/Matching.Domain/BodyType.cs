@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public class Education
+    public enum BodyType
     {
-        public int Id { get; set; }
-        public EducationType EducationType { get; set; }
-        public Person Person { get; set; }
+        Thin,
+        Average,
+        Sporty,
 
     }
 }

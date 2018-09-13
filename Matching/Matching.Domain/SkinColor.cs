@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public class Education
+    public enum SkinColor
     {
-        public int Id { get; set; }
-        public EducationType EducationType { get; set; }
-        public Person Person { get; set; }
+        White,
+        Black,
+        Brown,
+        Pale,
 
+        
     }
 }

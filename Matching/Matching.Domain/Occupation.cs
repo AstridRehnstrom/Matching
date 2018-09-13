@@ -8,6 +8,9 @@ namespace Matching.Domain
 {
     public class Occupation
     {
+        public int Id { get; set; }
+        public OccupationType occupation { get; set; }
+        public Person Person { get; set; }
         
     }
 }

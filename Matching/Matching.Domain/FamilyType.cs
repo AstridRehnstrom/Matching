@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public enum EducationType
+    public enum FamilyType
     {
-        School,
-        HighSchool,
-        Univercity,
-        Academic
-
-
+        HaveChild
     }
 }

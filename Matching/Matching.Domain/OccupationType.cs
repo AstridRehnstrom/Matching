@@ -6,8 +6,26 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public class OccupationType
+    public enum OccupationType
     {
-        
+        Student,
+
+        BetweenJiob,
+
+        ArtsAndEntertainment,
+
+        Business,
+
+        IndustrialAndManufacturing,
+
+        LawEnforcementAndArmedForces,
+
+        ScienceAndTechnology,
+
+        HealthcareAndMedicine,
+
+        Service
+
+
     }
 }

@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public class Education
+    public class Family
     {
         public int Id { get; set; }
-        public EducationType EducationType { get; set; }
-        public Person Person { get; set; }
-
+        public bool HaveChildren { get; set; }
+        public bool HaveAnimal { get; set; }
     }
 }

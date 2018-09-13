@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Matching.Domain
 {
-    public enum EducationType
+    public enum HairColor
     {
-        School,
-        HighSchool,
-        Univercity,
-        Academic
-
-
+        Brown,
+        Blonde,
+        Red,
+        Black
     }
 }
