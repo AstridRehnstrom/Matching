@@ -21,6 +21,11 @@ namespace Match.Data
             modelBuilder.Entity<PersonPersonality>()
 
                 .HasKey(x => new { x.PersonId, x.PersonalityId });
+
+            modelBuilder.Entity<InterestsPerson>()
+
+                .HasKey(x => new { x.PersonId, x.InterestsId });
         }
+
     }
 }

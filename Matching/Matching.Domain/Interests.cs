@@ -15,7 +15,7 @@ namespace Matching.Domain
         public int Id { get; set; }
 
         public PersonInterest PersonInterest { get; set; }
-        public Person person { get; set; }
+        public List<InterestsPerson> InterestsPerson { get; set; }
 
 
 
