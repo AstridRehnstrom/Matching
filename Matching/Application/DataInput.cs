@@ -62,6 +62,7 @@ namespace Application
 
             };
 
+
             var person1 = new Person { };
             var person2 = new Person { };
             var person3 = new Person { };
@@ -71,9 +72,168 @@ namespace Application
             var person7 = new Person { };
             var person8 = new Person { };
             var person9 = new Person { };
-           var person10= new Person { };
-           var person11 =new Person { };
-           var person12 = new Person { };
+            var person10 = new Person
+            {
+                NickName = "Gurra",
+                FirstName = "Gunnar",
+                LastName = "Larsson",
+                Age = 58,
+                Gender = GenderType.Male,
+
+                ContactInfo = new ContactInfo
+                {
+                    Adress = "Götgatan 45",
+                    Email = "gurraA@hotmail.com",
+                    Location = "Stockholm",
+                },
+                IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Male}
+
+                },
+                Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.HighSchool }
+                },
+               Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.BetweenJiob}
+                },
+               Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Thin, HairColor=HairColor.Red, SkinColor=SkinColor.Pale}
+                },
+               Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=false, HaveChildren=false}
+                },
+               InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Literature}
+                    }
+
+                },
+               PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Punctual }
+
+                         }
+                }
+
+
+
+           };
+           var person11 =new Person
+           {
+               NickName = "Emmy",
+               FirstName = "Emma-Lisa",
+               LastName = "Svensson",
+               Age = 22,
+               Gender = GenderType.Female,
+
+               ContactInfo = new ContactInfo
+               {
+                   Adress = "Stora Svängen 73",
+                   Email = "emmy96@gmail.com",
+                   Location = "Göteborg",
+               },
+               IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Female}
+
+                },
+               Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.HighSchool }
+                },
+               Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.LawEnforcementAndArmedForces}
+                },
+               Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Average, HairColor=HairColor.Brown, SkinColor=SkinColor.Brown}
+                },
+               Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=true, HaveChildren=false}
+                },
+               InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.HealtExercise}
+                    }
+
+                },
+               PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Spontaneous }
+
+                         }
+                }
+
+
+
+
+           };
+           var person12 = new Person
+           {
+               NickName = "Fredda",
+               FirstName = "Fredrik",
+               LastName = "Berghed",
+               Age = 34,
+               Gender = GenderType.Male,
+
+               ContactInfo = new ContactInfo
+               {
+                   Adress = "Klostergatan 4",
+                   Email = "fredrik.berghed@tele2.se",
+                   Location = "Göteborg",
+               },
+               IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Male}
+
+                },
+               Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.Univercity }
+                },
+               Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.ScienceAndTechnology}
+                },
+               Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Sporty, HairColor=HairColor.Blonde, SkinColor=SkinColor.White}
+                },
+               Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=false, HaveChildren=true}
+                },
+               InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.HealtExercise}
+                    }
+
+                },
+               PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Sporting }
+
+                         }
+                }
+
+
+
+
+
+           };
 
 
 
