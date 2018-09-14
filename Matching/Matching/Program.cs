@@ -20,6 +20,9 @@ namespace Matching
             //DataInput.AddPersonWithData();
             ListAllPersonsWithSameInterests(PersonInterest.Literature);
             ListAllPersonsWithSameInterests(PersonInterest.Movie);
+            ListAllPersonsWithSamePersonality(PeronalityCharacter.Charming);
+            ListAllPersonsWithSamePersonality(PeronalityCharacter.Creative);
+
             UserInformation();
         }
 
@@ -189,13 +192,7 @@ namespace Matching
                     Console.WriteLine(item.NickName);
                 }
             }
-           
-
-          //DataInput.ClearDatabase();
-          //DataInput.AddPersonWithData();
-           ListAllPersonsWithSameInterests(PersonInterest.Literature);
-           ListAllPersonsWithSameInterests(PersonInterest.Movie);
-           ListAllPersonsWithSamePersonality(PeronalityCharacter.Charming);
+                               
 
         }
 
