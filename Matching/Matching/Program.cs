@@ -4,6 +4,9 @@ using Application;
 using Match.Data;
 using Matching.Domain;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing;
+using Console = Colorful.Console;
+using System.Threading;
 
 namespace Matching
 {
@@ -13,46 +16,60 @@ namespace Matching
         static void Main(string[] args)
         {
 
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("Dejting-Appen");
-            Console.ResetColor();
+           
+            Console.WriteLine("Dating-App", Color.DeepPink);
+           
             //DataInput.ClearDatabase();
             //DataInput.AddPersonWithData();
             ListAllPersonsWithSameInterests(PersonInterest.Literature);
             ListAllPersonsWithSameInterests(PersonInterest.Movie);
             ListAllPersonsWithSamePersonality(PeronalityCharacter.Charming);
             ListAllPersonsWithSamePersonality(PeronalityCharacter.Creative);
-
+            System.Console.WriteLine();
+            Thread.Sleep(8000);
+            Console.Clear();
             UserInformation();
         }
 
         private static void UserInformation()
         {
-            Console.WriteLine("Welcome to Matching enter following information for search for match");
-            Console.WriteLine("Enter your Name");
-            string input1 = Console.ReadLine();
-            Console.WriteLine("Enter your age");
-            int input2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter gender");
-            string input3 = Console.ReadLine();
-            Console.WriteLine("Thank you for infomation");
-            Console.WriteLine();
-            Console.WriteLine("Select one of  following catogories for seaach for match");
-
-            Console.WriteLine("\tenter A " + "Match with Education");
-            Console.WriteLine("\tenter B " + "Match with personality");
-            Console.WriteLine("\tenter C " + "Match with Interest");
-            Console.WriteLine("\tenter D " + "Match with Occupation");
-            ConsoleKey command = Console.ReadKey().Key;
-            switch (command)
+            while (true)
             {
+               
+                System.Console.WriteLine();
+                Console.WriteLine("".PadRight(20) + "Welcome to Matching Database enter following information to search for match", Color.DeepPink);
+                Console.Write("Enter your Name:");
+                string input1 = Console.ReadLine();
+                Console.Write("Enter your age:");
+                int input2 = int.Parse(Console.ReadLine());
+                Console.Write("Enter gender:");
+                string input3 = Console.ReadLine();
+                Console.Write("Thank you for infomation:");
+                System.Console.WriteLine(input1);
+                Console.WriteLine();
+                Console.WriteLine("Select one of  following catogories for seaach for match", Color.DeepPink);
 
-                case ConsoleKey.A: MatchingWithEducation(); break;
-                case ConsoleKey.B: MatchingWithPersonality(); break;
-                case ConsoleKey.C: MatchingWithInterest(); break;
-                case ConsoleKey.D: MatchingWithOccupation(); break;
+
+                System.Console.WriteLine();
+                Console.WriteLine("\tenter A " + "Match with Education", Color.BurlyWood);
+                Console.WriteLine("\tenter B " + "Match with personality", Color.BurlyWood);
+                Console.WriteLine("\tenter C " + "Match with Interest", Color.BurlyWood);
+                Console.WriteLine("\tenter D " + "Match with Occupation", Color.BurlyWood);
+                ConsoleKey command = Console.ReadKey().Key;
+                switch (command)
+                {
+
+                    case ConsoleKey.A: MatchingWithEducation(); break;
+                    case ConsoleKey.B: MatchingWithPersonality(); break;
+                    case ConsoleKey.C: MatchingWithInterest(); break;
+                    case ConsoleKey.D: MatchingWithOccupation(); break;
+                }
 
             }
+
+
+
+
 
         }
 
@@ -65,7 +82,7 @@ namespace Matching
                 {
                     Console.WriteLine();
                     Console.WriteLine("Seelct your occupation catogory");
-                    Console.WriteLine(string.Join(",\t", Enum.GetNames(typeof(OccupationType))));
+                    Console.WriteLine(string.Join(",\n", Enum.GetNames(typeof(OccupationType))),Color.Green);
 
                     string input = Console.ReadLine();
                     choice = Enum.Parse<OccupationType>(input);
@@ -83,10 +100,15 @@ namespace Matching
             {
                 Console.WriteLine("Sorry no match find");
             }
-            foreach (var item in c)
+            else
             {
-                
-                Console.WriteLine(item.NickName);
+                Console.WriteLine("Congradulations we find match for you");
+                foreach (var item in c)
+                {
+
+
+                    Console.WriteLine("Matchs name".PadRight(15) + item.FirstName, Color.IndianRed);
+                }
             }
 
 
@@ -95,12 +117,13 @@ namespace Matching
         private static void MatchingWithInterest()
         {
             PersonInterest choice;
+            System.Console.WriteLine("\n");
             while (true)
             {
                 try
                 {
                     Console.WriteLine("Seelct your interest catogory");
-                    Console.WriteLine(string.Join(",", Enum.GetNames(typeof(PersonInterest))));
+                    Console.WriteLine(string.Join(",\n", Enum.GetNames(typeof(PersonInterest))), Color.Green);
 
                     string input = Console.ReadLine();
                     choice = Enum.Parse< PersonInterest>(input);
@@ -118,10 +141,15 @@ namespace Matching
             {
                 Console.WriteLine("Sorry no match find");
             }
-            foreach (var item in c)
+            else
             {
+                Console.WriteLine("Congradulations we find match for you");
+                foreach (var item in c)
+                {
 
-                Console.WriteLine(item.NickName);
+
+                    Console.WriteLine("Matchs name".PadRight(15) + item.FirstName, Color.IndianRed);
+                }
             }
         }
 
@@ -133,7 +161,7 @@ namespace Matching
                 try
                 {
                     Console.WriteLine("Seelct your Personality catogory");
-                    Console.WriteLine(string.Join(",", Enum.GetNames(typeof(PeronalityCharacter))));
+                    Console.WriteLine(string.Join(",\n", Enum.GetNames(typeof(PeronalityCharacter))), Color.Green);
 
                     string input = Console.ReadLine();
                     choice = Enum.Parse<PeronalityCharacter>(input);
@@ -147,14 +175,19 @@ namespace Matching
                 }
             }
             var c = MatchData.Persons.Where(x => x.PersonPersonalities.Select(y => y.Personality.PeronalityTraits).Contains(choice)).ToList();
-            if (c.Count == null)
+            if (c.Count == 0)
             {
                 Console.WriteLine("Sorry no match find");
             }
-            foreach (var item in c)
+            else
             {
+                Console.WriteLine("Congradulations we find match for you");
+                foreach (var item in c)
+                {
 
-                Console.WriteLine(item.NickName);
+
+                    Console.WriteLine("Matchs name".PadRight(15) + item.FirstName, Color.IndianRed);
+                }
             }
         }
 
@@ -166,7 +199,7 @@ namespace Matching
                 try
                 {
                     Console.WriteLine("Seelct your Education catogory");
-                    Console.WriteLine(string.Join(",", Enum.GetNames(typeof(EducationType))));
+                    Console.WriteLine(string.Join(",\n", Enum.GetNames(typeof(EducationType))), Color.Green);
 
                     string input = Console.ReadLine();
                     choice = Enum.Parse<EducationType>(input);
@@ -180,16 +213,19 @@ namespace Matching
                 }
             }
             var c = MatchData.Persons.Where(x => x.Educations.Select(y => y.EducationType).Contains(choice)).ToList();
-            if (c.Count == null)
+            if (c.Count == 0)
             {
                 Console.WriteLine("Sorry no match find");
+               
             }
             else
             {
+                Console.WriteLine("Congradulations we find match for you");
                 foreach (var item in c)
                 {
 
-                    Console.WriteLine(item.NickName);
+                    
+                    Console.WriteLine("Matchs name".PadRight(15) + item.FirstName,Color.IndianRed);
                 }
             }
                                
@@ -198,7 +234,7 @@ namespace Matching
 
         private static void ListAllPersonsWithSamePersonality(PeronalityCharacter personalityTrait)
         {
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = Color.DarkMagenta;
             Console.WriteLine("Show all persons with the personal trait: " + personalityTrait);
             Console.ResetColor();
             using (var context = new MatchMainData())
@@ -214,7 +250,7 @@ namespace Matching
 
         private static void ListAllPersonsWithSameInterests(PersonInterest interest)
         {
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = Color.DarkMagenta;
             Console.WriteLine("Show all persons with the inteserst: " + interest);
             Console.ResetColor();
             using (var context = new MatchMainData())
