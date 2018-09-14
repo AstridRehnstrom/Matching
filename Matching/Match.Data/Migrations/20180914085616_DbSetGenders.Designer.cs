@@ -4,14 +4,16 @@ using Match.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Match.Data.Database.Migrations
 {
     [DbContext(typeof(MatchMainData))]
-    partial class MatchMainDataModelSnapshot : ModelSnapshot
+    [Migration("20180914085616_DbSetGenders")]
+    partial class DbSetGenders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,7 +39,7 @@ namespace Match.Data.Database.Migrations
 
                     b.HasIndex("PersonId");
 
-                    b.ToTable("Complexions");
+                    b.ToTable("Complexion");
                 });
 
             modelBuilder.Entity("Matching.Domain.ContactInfo", b =>
@@ -59,7 +61,7 @@ namespace Match.Data.Database.Migrations
                     b.HasIndex("PersonId")
                         .IsUnique();
 
-                    b.ToTable("ContactInfos");
+                    b.ToTable("ContactInfo");
                 });
 
             modelBuilder.Entity("Matching.Domain.Education", b =>
@@ -76,7 +78,7 @@ namespace Match.Data.Database.Migrations
 
                     b.HasIndex("PersonId");
 
-                    b.ToTable("Educations");
+                    b.ToTable("Education");
                 });
 
             modelBuilder.Entity("Matching.Domain.Family", b =>
@@ -95,7 +97,7 @@ namespace Match.Data.Database.Migrations
 
                     b.HasIndex("PersonId");
 
-                    b.ToTable("Families");
+                    b.ToTable("Family");
                 });
 
             modelBuilder.Entity("Matching.Domain.Gender", b =>
@@ -155,7 +157,7 @@ namespace Match.Data.Database.Migrations
 
                     b.HasIndex("PersonId");
 
-                    b.ToTable("Occupations");
+                    b.ToTable("Occupation");
                 });
 
             modelBuilder.Entity("Matching.Domain.Person", b =>
@@ -189,7 +191,7 @@ namespace Match.Data.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Personalities");
+                    b.ToTable("Personality");
                 });
 
             modelBuilder.Entity("Matching.Domain.PersonPersonality", b =>

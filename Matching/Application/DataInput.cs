@@ -63,9 +63,189 @@ namespace Application
             };
 
 
-            var person1 = new Person { };
-            var person2 = new Person { };
-            var person3 = new Person { };
+            var person1 = new Person
+            {
+                NickName = "Renu",
+                FirstName = "Renuka",
+                LastName = "Crook",
+                Age = 24,
+                Gender = GenderType.Female,
+
+                ContactInfo = new ContactInfo
+                {
+                    Adress = "västberga alle 20",
+                    Email = "renu@hotmail.com",
+                    Location = "Stockholm",
+                },
+                IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Male}
+
+                },
+                Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.HighSchool }
+                },
+                Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.BetweenJiob}
+                },
+                Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Sporty, HairColor=HairColor.Brown, SkinColor=SkinColor.Black}
+                },
+                Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=true, HaveChildren=true}
+                },
+                InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Literature}
+                    },
+                     new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Travel}
+                    }
+
+                },
+                PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Calm}
+
+                         },
+                     new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Cooperative}
+
+                         },
+                      new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Emotional }
+
+                         }
+                }
+            };
+            var person2 = new Person
+            {
+                NickName = "Lo",
+                FirstName = "Laurien",
+                LastName = "Samsson",
+                Age = 40,
+                Gender = GenderType.Female,
+
+                ContactInfo = new ContactInfo
+                {
+                    Adress = "Hornsgatan 20",
+                    Email = "Laurien@hotmail.com",
+                    Location = "Stockholm",
+                },
+                IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Female}
+
+                },
+                Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.Academic }
+                },
+                Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.HealthcareAndMedicine}
+                },
+                Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Average, HairColor=HairColor.Blonde, SkinColor=SkinColor.White}
+                },
+                Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=false, HaveChildren=false}
+                },
+                InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.HealtExercise}
+                    },
+                     new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Music}
+                    }
+
+                },
+                PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Adventurous }
+
+                         },
+                     new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Flexible }
+
+                         },
+                      new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Friendly }
+
+                         }
+                }
+            };
+            var person3 = new Person
+            {
+                NickName = "Stephen",
+                FirstName = "Stev",
+                LastName = "Thilaka",
+                Age = 32,
+                Gender = GenderType.Male,
+
+                ContactInfo = new ContactInfo
+                {
+                    Adress = "Brovägen 8",
+                    Email = "lolloA@hotmail.com",
+                    Location = "Stockholm",
+                },
+                IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Male}
+
+                },
+                Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.School }
+                },
+                Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.Service}
+                },
+                Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Sporty, HairColor=HairColor.Black, SkinColor=SkinColor.Pale}
+                },
+                Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=true, HaveChildren=false}
+                },
+                InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.FoodNDrink}
+                    },
+                     new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Travel}
+                    }
+
+                },
+                PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Enthusiastic }
+
+                         },
+                     new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Emotional }
+
+                         },
+                      new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Helpful }
+
+                         }
+                }
+            };
             var person4 = new Person {
                 NickName = "Lollo",
                 FirstName = "Louise",
@@ -264,9 +444,217 @@ namespace Application
 
 
             };
-            var person7 = new Person { };
-            var person8 = new Person { };
-            var person9 = new Person { };
+            var person7 = new Person {
+                NickName = "Sama",
+                FirstName = "Samira",
+                LastName = "Davidsson",
+                Age = 41,
+                Gender = GenderType.Female,
+
+                ContactInfo = new ContactInfo
+                {
+                    Adress = "Skogsstiggen 6",
+                    Email = "sama@gmail.com",
+                    Location = "Stockholm",
+                },
+                IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Male}
+
+                },
+                Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.Univercity }
+                },
+                Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.LawEnforcementAndArmedForces}
+                },
+                Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Average, HairColor=HairColor.Brown, SkinColor=SkinColor.Pale}
+                },
+                Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=false, HaveChildren=true}
+                },
+                InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Literature}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.FoodNDrink}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Travel}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.HealtExercise}
+                    }
+
+                },
+                PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Punctual }
+
+                         },
+                     new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Cooperative }
+
+                         },
+                      new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Emotional }
+
+                         },
+                       new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.BigThinking }
+
+                         }
+                }
+            
+        };
+            var person8 = new Person {
+                NickName = "Bobo",
+                FirstName = "David",
+                LastName = "Martinsson",
+                Age = 45,
+                Gender = GenderType.Male,
+
+                ContactInfo = new ContactInfo
+                {
+                    Adress = "Stinagatan 189",
+                    Email = "david.martinsson@gmail.com",
+                    Location = "Stockholm",
+                },
+                IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Female}
+
+                },
+                Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.HighSchool }
+                },
+                Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.ArtsAndEntertainment}
+                },
+                Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Average, HairColor=HairColor.Brown, SkinColor=SkinColor.Pale}
+                },
+                Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=true, HaveChildren=true}
+                },
+                InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Movie}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.FoodNDrink}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Music}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.HealtExercise}
+                    }
+
+                },
+                PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Lyrical }
+
+                         },
+                     new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Spontaneous }
+
+                         },
+                      new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Trusting }
+
+                         },
+                       new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Creative }
+
+                         }
+                }
+            };
+            var person9 = new Person {
+                NickName = "Jujik",
+                FirstName = "Martin",
+                LastName = "Kristersson",
+                Age = 27,
+                Gender = GenderType.Male,
+
+                ContactInfo = new ContactInfo
+                {
+                    Adress = "Storagatan 320",
+                    Email = "jujik@gmail.com",
+                    Location = "Stockholm",
+                },
+                IntrestedInGenders = new List<Gender>
+                {
+                    new Gender { GenderType = GenderType.Male}
+
+                },
+                Educations = new List<Education>
+                {
+                    new Education{ EducationType=EducationType.HighSchool }
+                },
+                Occupations = new List<Occupation>
+                {
+                   new Occupation{ occupation=OccupationType.HealthcareAndMedicine}
+                },
+                Complexions = new List<Complexion>
+                {
+                    new Complexion{ BodyType=BodyType.Sporty, HairColor=HairColor.Brown, SkinColor=SkinColor.White}
+                },
+                Family = new List<Family>
+                {
+                    new Family{  HaveAnimal=true, HaveChildren=false}
+                },
+                InterestsPerson = new List<InterestsPerson>
+                {
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Movie}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.FoodNDrink}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.Music}
+                    },
+                    new InterestsPerson{
+                        Interests=new Interests{PersonInterest=PersonInterest.HealtExercise}
+                    }
+
+                },
+                PersonPersonalities = new List<PersonPersonality>
+                {
+                    new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Disciplined }
+
+                         },
+                     new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Charming }
+
+                         },
+                      new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Logical}
+
+                         },
+                       new  PersonPersonality{
+                         Personality=new  Personality{   PeronalityTraits=PeronalityCharacter.Friendly }
+
+                         }
+                }
+            };
             var person10 = new Person
             {
                 NickName = "Gurra",
@@ -443,16 +831,70 @@ namespace Application
                 context.SaveChanges();
             }
         }
-        /*
+        
         public static  void ClearDatabase()
         {
-            // För att ta bort ett objekt måste du först göra en query
+            
+
             using (var context = new MatchMainData())
             {
-                context.Remove(context.Persons);
-                context.Remove(context.Personality);
-                context.Remove(context.Interests);
-                //ReseedAllTables();
+
+                foreach (var item in context.Genders)
+                {
+
+                    context.Remove(item);
+
+                }
+
+                foreach (var item in context.Persons)
+                {
+                   
+                    context.Remove(item);
+
+
+                }
+                foreach (var item in context.Interests)
+                {
+
+                    context.Remove(item);
+
+                }
+                foreach (var item in context.Occupations)
+                {
+
+                    context.Remove(item);
+
+                }
+                foreach (var item in context.Educations)
+                {
+
+                    context.Remove(item);
+
+                }
+                foreach (var item in context.Families)
+                {
+
+                    context.Remove(item);
+
+                }
+                foreach (var item in context.ContactInfos)
+                {
+
+                    context.Remove(item);
+
+                }
+                foreach (var item in context.Complexions)
+                {
+
+                    context.Remove(item);
+
+                }
+                foreach (var item in context.Personalities)
+                {
+
+                    context.Remove(item);
+
+                }
 
                 context.SaveChanges();
             }
@@ -460,7 +902,7 @@ namespace Application
 
            
         }
-        */
+        
 
     }
 }

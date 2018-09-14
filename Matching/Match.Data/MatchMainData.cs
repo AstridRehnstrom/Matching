@@ -7,8 +7,15 @@ namespace Match.Data
     public class MatchMainData : DbContext
     {
         public DbSet<Person> Persons { get; set; }
-        public DbSet<Personality> Personality { get; set; }
+      
         public DbSet<Interests> Interests { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Education> Educations { get; set; }
+        public DbSet<Complexion> Complexions { get; set; }
+        public DbSet<Family> Families { get; set; }
+        public DbSet<Occupation> Occupations { get; set; }
+        public DbSet<Personality> Personalities { get; set; }
+        public DbSet<ContactInfo> ContactInfos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,8 +26,8 @@ namespace Match.Data
 
         {
 
-            modelBuilder.Entity<PersonPersonality>()
 
+            modelBuilder.Entity<PersonPersonality>()
                 .HasKey(x => new { x.PersonId, x.PersonalityId });
 
             modelBuilder.Entity<InterestsPerson>()
