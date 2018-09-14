@@ -18,6 +18,24 @@ namespace Matching
           //DataInput.AddPersonWithData();
            ListAllPersonsWithSameInterests(PersonInterest.Literature);
            ListAllPersonsWithSameInterests(PersonInterest.Movie);
+           ListAllPersonsWithSamePersonality(PeronalityCharacter.Charming);
+
+        }
+
+        private static void ListAllPersonsWithSamePersonality(PeronalityCharacter personalityTrait)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine("Show all persons with the personal trait: " + personalityTrait);
+            Console.ResetColor();
+            using (var context = new MatchMainData())
+            {
+                foreach (var person in context.Persons
+                    .Include(q => q.PersonPersonalities)
+                    .Where(p => p.PersonPersonalities.Select(x => x.Personality.PeronalityTraits).Contains(personalityTrait)))
+                {
+                    Console.WriteLine(person.FirstName + " " + person.LastName);
+                }
+            }
         }
 
         private static void ListAllPersonsWithSameInterests(PersonInterest interest)
